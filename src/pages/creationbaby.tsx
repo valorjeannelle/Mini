@@ -15,7 +15,19 @@ function CreationBaby(){
    function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault()
         const formData = new FormData(event.currentTarget);
-        console.log([...formData.entries()]);
+        const data=Object.fromEntries(formData.entries());
+        type BabyData={
+            nom:string,
+            prenom:string,
+            sexe:string,
+            taille:number,
+            poids:number,
+            date_naissance:string,
+            lieu_naissance:string,
+            statut_vital:string,
+            photo:File
+        }
+        console.log(data);
         }
     return (
         <>
@@ -84,4 +96,6 @@ function CreationBaby(){
     );
 }
 
-export default CreationBaby;
+
+
+export default  CreationBaby ;
