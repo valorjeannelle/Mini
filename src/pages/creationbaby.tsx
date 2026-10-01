@@ -4,6 +4,7 @@ import {useState} from 'react'
 function CreationBaby(){
     const [name,setName]=useState("");
     const [firstname,setfirstName]=useState("");
+    const [sex,setSex]=useState("");
     return (
         <>
         <h1>Enregistrement du nouveau né</h1>
@@ -19,7 +20,9 @@ function CreationBaby(){
                 onChange={(event)=>setfirstName(event.target.value)}
                 />
                 <label htmlFor="sexe">Sexe:</label>
-                <select id="sexe">
+                <select id="sexe" value={sex}
+                onChange={(event)=>setSex(event.target.value)}
+                >
                     <option value="">Selectionner le sexe du nouveau-né</option>
                     <option value="Masculin">Masculin</option>
                     <option value="Feminin">Feminin</option>
